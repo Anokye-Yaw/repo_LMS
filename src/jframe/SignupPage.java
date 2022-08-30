@@ -4,7 +4,7 @@
  */
 package jframe;
 
-import com.mysql.cj.protocol.Resultset;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import javax.swing.JOptionPane;
