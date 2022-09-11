@@ -5,6 +5,7 @@
 package jframe;
 
 import java.awt.Color;
+import javax.swing.table.TableModel;
 
 /**
  *
@@ -17,6 +18,8 @@ public class HomePage extends javax.swing.JFrame {
      */
     public HomePage() {
         initComponents();
+        
+        
     }
     
     Color mouseEnter = new Color(0,0,0);
@@ -82,9 +85,9 @@ public class HomePage extends javax.swing.JFrame {
         jLabel26 = new javax.swing.JLabel();
         jLabel27 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        rSTableMetro1 = new rojeru_san.complementos.RSTableMetro();
+        tblbookdetails = new rojeru_san.complementos.RSTableMetro();
         jScrollPane2 = new javax.swing.JScrollPane();
-        rSTableMetro2 = new rojeru_san.complementos.RSTableMetro();
+        tblstudentdetails = new rojeru_san.complementos.RSTableMetro();
         jLabel28 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
         jLabel29 = new javax.swing.JLabel();
@@ -264,6 +267,11 @@ public class HomePage extends javax.swing.JFrame {
         jLabel14.setForeground(new java.awt.Color(255, 255, 255));
         jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/adminIcons/adminIcons/icons8_Read_Online_26px.png"))); // NOI18N
         jLabel14.setText("   Manage Students");
+        jLabel14.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel14MouseClicked(evt);
+            }
+        });
         jPanel13.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 10, 160, -1));
 
         jPanel3.add(jPanel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 240, 280, 40));
@@ -391,7 +399,7 @@ public class HomePage extends javax.swing.JFrame {
         jLabel27.setText("Issue Books");
         jPanel16.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 20, -1, -1));
 
-        rSTableMetro1.setModel(new javax.swing.table.DefaultTableModel(
+        tblbookdetails.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -402,16 +410,16 @@ public class HomePage extends javax.swing.JFrame {
                 "Book Id", "Name", "Author", "Quantity"
             }
         ));
-        rSTableMetro1.setColorBackgoundHead(new java.awt.Color(102, 102, 255));
-        rSTableMetro1.setColorBordeFilas(new java.awt.Color(102, 102, 255));
-        rSTableMetro1.setColorFilasBackgound2(new java.awt.Color(255, 255, 255));
-        rSTableMetro1.setIntercellSpacing(new java.awt.Dimension(0, 0));
-        rSTableMetro1.setRowHeight(40);
-        jScrollPane1.setViewportView(rSTableMetro1);
+        tblbookdetails.setColorBackgoundHead(new java.awt.Color(102, 102, 255));
+        tblbookdetails.setColorBordeFilas(new java.awt.Color(102, 102, 255));
+        tblbookdetails.setColorFilasBackgound2(new java.awt.Color(255, 255, 255));
+        tblbookdetails.setIntercellSpacing(new java.awt.Dimension(0, 0));
+        tblbookdetails.setRowHeight(40);
+        jScrollPane1.setViewportView(tblbookdetails);
 
         jPanel16.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 470, 500, 210));
 
-        rSTableMetro2.setModel(new javax.swing.table.DefaultTableModel(
+        tblstudentdetails.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -422,13 +430,18 @@ public class HomePage extends javax.swing.JFrame {
                 "Student Id", "Name", "Course", "Branch"
             }
         ));
-        rSTableMetro2.setColorBackgoundHead(new java.awt.Color(102, 102, 255));
-        rSTableMetro2.setColorBordeFilas(new java.awt.Color(102, 102, 255));
-        rSTableMetro2.setColorFilasBackgound2(new java.awt.Color(255, 255, 255));
-        rSTableMetro2.setColorSelBackgound(new java.awt.Color(255, 51, 51));
-        rSTableMetro2.setIntercellSpacing(new java.awt.Dimension(0, 0));
-        rSTableMetro2.setRowHeight(40);
-        jScrollPane2.setViewportView(rSTableMetro2);
+        tblstudentdetails.setColorBackgoundHead(new java.awt.Color(102, 102, 255));
+        tblstudentdetails.setColorBordeFilas(new java.awt.Color(102, 102, 255));
+        tblstudentdetails.setColorFilasBackgound2(new java.awt.Color(255, 255, 255));
+        tblstudentdetails.setColorSelBackgound(new java.awt.Color(255, 51, 51));
+        tblstudentdetails.setIntercellSpacing(new java.awt.Dimension(0, 0));
+        tblstudentdetails.setRowHeight(40);
+        tblstudentdetails.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tblstudentdetailsMouseClicked(evt);
+            }
+        });
+        jScrollPane2.setViewportView(tblstudentdetails);
 
         jPanel16.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 210, 490, 210));
 
@@ -484,6 +497,18 @@ public class HomePage extends javax.swing.JFrame {
         // TODO add your handling code here:
         lblclose.setBackground(mouseExitLabel);
     }//GEN-LAST:event_lblcloseMouseExited
+
+    private void jLabel14MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel14MouseClicked
+        // TODO add your handling code here:
+  
+    }//GEN-LAST:event_jLabel14MouseClicked
+
+    private void tblstudentdetailsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblstudentdetailsMouseClicked
+        // TODO add your handling code here:
+
+       
+        
+    }//GEN-LAST:event_tblstudentdetailsMouseClicked
 
     /**
      * @param args the command line arguments
@@ -575,7 +600,7 @@ public class HomePage extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel lblclose;
-    private rojeru_san.complementos.RSTableMetro rSTableMetro1;
-    private rojeru_san.complementos.RSTableMetro rSTableMetro2;
+    private rojeru_san.complementos.RSTableMetro tblbookdetails;
+    private rojeru_san.complementos.RSTableMetro tblstudentdetails;
     // End of variables declaration//GEN-END:variables
 }
